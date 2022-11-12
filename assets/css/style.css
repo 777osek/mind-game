@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Roboto:wght@300&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    /*font-family: lato, sans-serif;*/
+    font-family: roboto, sans-serif;
+    font-weight: 300;
+    color: black;
+    background-color: #cac4ce;
+}
+
+/* heading and logo */
+
+h1,h2 {
+    font-family: roboto, sans-serif;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    color: black;
+}
+
+#logo {
+    float: left;
+    font-size: 280%;
+    margin-left: 30px;
+}
+
+
+/* navigation for all pages*/
+
+#menu {
+    font-size: 130%;
+    letter-spacing: 1px;
+}
+
+#menu, #logo {
+    line-height: 75px;
+}
+
+#menu li {
+    float: right;
+    list-style-type: none;
+    margin-right: 20px;
+}
+
+#menu a {
+    padding: 5px;
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+}
+
+#menu a:hover {
+    padding: 5px;
+    background-color: #fff;
+    border-bottom: 2px solid #a940c9;
+}
+
+.active {
+    padding: 5px;
+    border-bottom: 2px solid #a940c9;
+}
+
+#mind-moves {
+    
+}
+
+/* footer for all pages*/
+
+footer {
+    float: left;
+    width: 100%;
+    background-color: rgba(169, 64, 201, .2);
+    color: black;
+    text-align: center;
+}
+
+div > p {
+    font-size: 120%;
+    margin-bottom: 10px;
+}
+
+.social-networks {
+    text-align: center;
+    margin: auto;
+}
+
+.social-networks > li {
+    display: inline;
+}
+
+.social-networks i {
+    font-size: 200%;
+    padding: 15px 30px;
+    color: black;
+}
