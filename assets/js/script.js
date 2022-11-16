@@ -1,42 +1,47 @@
-let section = document.querySelector("section");
-let mindMovesCount = document.querySelector("span");
-let mindMoves = 8;
+const section = document.querySelector("section");
+const mindMovesCount = document.querySelector("span");
+const mindMoves = 8;
 
 mindMovesCount.textContent = mindMoves;
 
-let getData = () => [
-    { imgSrc: "./images/image-1.png", name: "images-1"},
-    { imgSrc: "./images/image-2.png", name: "images-2"},
-    { imgSrc: "./images/image-3.png", name: "images-3"},
-    { imgSrc: "./images/image-4.png", name: "images-4"},
-    { imgSrc: "./images/image-5.png", name: "images-5"},
-    { imgSrc: "./images/image-6.png", name: "images-6"},
-    { imgSrc: "./images/image-1.png", name: "images-1"},
-    { imgSrc: "./images/image-2.png", name: "images-2"},
-    { imgSrc: "./images/image-3.png", name: "images-3"},
-    { imgSrc: "./images/image-4.png", name: "images-4"},
-    { imgSrc: "./images/image-5.png", name: "images-5"},
-    { imgSrc: "./images/image-6.png", name: "images-6"},
-];
+const getData = () => [
+    { imgSrc: "/assets/images/learning-1.jpg", name: "learning-1"},
+    { imgSrc: "/assets/images/learning-2.jpg", name: "learning-2"},
+    { imgSrc: "/assets/images/learning-3.jpg", name: "learning-3"},
+    { imgSrc: "/assets/images/learning-4.jpg", name: "learning-4"},
+    { imgSrc: "/assets/images/learning-5.jpg", name: "learning-5"},
+    { imgSrc: "/assets/images/learning-6.jpg", name: "learning-6"},
+    { imgSrc: "/assets/images/learning-7.jpg", name: "learning-7"},
+    { imgSrc: "/assets/images/learning-8.jpg", name: "learning-8"},
+    { imgSrc: "/assets/images/learning-1.jpg", name: "learning-1"},
+    { imgSrc: "/assets/images/learning-2.jpg", name: "learning-2"},
+    { imgSrc: "/assets/images/learning-3.jpg", name: "learning-3"},
+    { imgSrc: "/assets/images/learning-4.jpg", name: "learning-4"},
+    { imgSrc: "/assets/images/learning-5.jpg", name: "learning-5"},
+    { imgSrc: "/assets/images/learning-6.jpg", name: "learning-6"},
+    { imgSrc: "/assets/images/learning-7.jpg", name: "learning-7"},
+    { imgSrc: "/assets/images/learning-8.jpg", name: "learning-8"},
+    ];
 
-let shuffle = () => {
-    let deckData = getData();
+const shuffle = () => {
+    const deckData = getData();
     deckData.sort(() => Math.random() - 0.5);
     return deckData;
 };
 
-let deckCreator = () => {
-    let deckData = shuffle();
+const deckCreator = () => {
+    const deckData = shuffle();
     deckData.forEach((item) => {
-        let deck = document.createElement("div");
-    let front = document.createElement("img");
-    let back = document.createElement("div");
-    deck.classList = "deck";
-    front.classList = "front";
-    back.classList = "back";
-    section.appendChild(deck);
-    deck.appendChild(front);
-    deck.appendChild(back);
+        const deck = document.createElement("div");
+        const front = document.createElement("img");
+        const back = document.createElement("div");
+        deck.classList = "deck";
+        front.classList = "front";
+        back.classList = "back";
+        front.src = item.imgSrc
+        section.appendChild(deck);
+        deck.appendChild(front);
+        deck.appendChild(back);
     });
 };
 
