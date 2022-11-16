@@ -38,11 +38,40 @@ const deckCreator = () => {
         deck.classList = "deck";
         front.classList = "front";
         back.classList = "back";
-        front.src = item.imgSrc
+        front.src = item.imgSrc;
+        deck.setAttribute("name", item.name); 
         section.appendChild(deck);
         deck.appendChild(front);
         deck.appendChild(back);
+        deck.addEventListener("click", (e) => {
+            deck.classList.toggle("toggle-deck");
+            checkDecks(e);
+        });
     });
 };
+
+const checkDecks = (e) => {
+    const clickedDeck = e.target;
+    clickedDeck.classList.add("turned");
+    const turnedDecks = document.querySelectorAll(".turned");
+    if (turnedDecks.length === 2) {
+        if (
+            turnedDecks[0].getAttribute("name") === 
+            turnedDecks[1].getAttribute("name")
+            ) {
+                console.log("match");
+                turnedDecks.forEach((deck) => {
+                    deck.classList.remove("turned");
+                    deck.style.pointerEvents = "none";
+                });
+            } else {
+                console.log("wrong");
+                turnedDecks.forEach((deck) => {
+                    deck.classList.remove("turned");
+                    setTimeout(() => deck.classList.remove("toggle-deck"), 1000);
+                });
+            }
+        }
+    };
 
 deckCreator();
