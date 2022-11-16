@@ -1,6 +1,6 @@
 const section = document.querySelector("section");
 const mindMovesCount = document.querySelector("span");
-const mindMoves = 8;
+let mindMoves = 8;
 
 mindMovesCount.textContent = mindMoves;
 
@@ -44,7 +44,7 @@ const deckCreator = () => {
         deck.appendChild(front);
         deck.appendChild(back);
         deck.addEventListener("click", (e) => {
-            deck.classList.toggle("toggle-deck");
+            deck.classList.toggle("toggleDeck");
             checkDecks(e);
         });
     });
@@ -54,6 +54,7 @@ const checkDecks = (e) => {
     const clickedDeck = e.target;
     clickedDeck.classList.add("turned");
     const turnedDecks = document.querySelectorAll(".turned");
+    const toggleDeck = document.querySelectorAll(".toggleDeck")
     if (turnedDecks.length === 2) {
         if (
             turnedDecks[0].getAttribute("name") === 
@@ -68,10 +69,37 @@ const checkDecks = (e) => {
                 console.log("wrong");
                 turnedDecks.forEach((deck) => {
                     deck.classList.remove("turned");
-                    setTimeout(() => deck.classList.remove("toggle-deck"), 1000);
+                    setTimeout(() => deck.classList.remove("toggleDeck"), 1000);
                 });
+                mindMoves --;
+                mindMovesCount.textContent = mindMoves;
+                if (mindMoves === 0) {
+                    restart("Good work - You are almost there 😃");
+                }
             }
         }
+        if (toggleDeck.length === 16) {
+            restart("Yes You made 😍 IT !");
+        }
     };
+
+const restart = (message) => {
+    let deckData = shuffle();
+    let front = document.querySelectorAll(".front");
+    let deck = document.querySelectorAll(".deck");
+    section.style.pointerEvents = "none";
+    deckData.forEach((item, index) => {
+        deck[index].classList.remove("toggleDeck");
+        setTimeout(() => {
+            deck[index].style.pointerEvents = "all";
+            front[index].src = item.imgSrc;
+            deck[index].setAttribute("name", item.name);
+            section.style.pointerEvents = "all";
+        }, 1000);
+    });
+    mindMoves = 8;
+    mindMovesCount.textContent = mindMoves;
+    setTimeout(() => window.alert(message), 500);
+};
 
 deckCreator();

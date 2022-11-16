@@ -46,6 +46,10 @@ section {
     backface-visibility: hidden;
 }
 
-.toggle-deck {
-    transform: rotateY(180deg);
+.toggleDeck {
+    transform: rotateY(0.5turn);
+}
+
+.front {
+    transform: rotateY(-0.5turn);
 }
