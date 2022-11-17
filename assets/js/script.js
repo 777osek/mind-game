@@ -79,7 +79,9 @@ const checkDecks = (e) => {
             }
         }
         if (toggleDeck.length === 16) {
-            restart("Yes You made 😍 IT !");
+            setTimeout(() => {
+                restart("Yes You made 😍 IT !");
+            }, 2000);
         }
     };
 
