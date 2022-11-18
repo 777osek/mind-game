@@ -1,7 +1,6 @@
 const section = document.querySelector("section");
 const mindMovesCount = document.querySelector("span");
 let mindMoves = 8;
-let deckImages;
 
 mindMovesCount.textContent = mindMoves;
 
@@ -25,13 +24,13 @@ const getImages = () => [
     ];
 
 const shuffle = () => {
-    deckImages = getImages();
+    const deckImages = getImages();
     deckImages.sort(() => Math.random() - 0.5);
     return deckImages;
 };
 
 const deckCreator = () => {
-    deckImages = shuffle();
+    const deckImages = shuffle();
     deckImages.forEach((item) => {
         const deck = document.createElement("div");
         const front = document.createElement("img");
@@ -41,7 +40,7 @@ const deckCreator = () => {
         back.classList = "back";
         front.src = item.imgSrc;
         deck.setAttribute("name", item.name);
-        front.setAttribute("alt", item.alt) 
+        front.setAttribute("alt", item.alt); 
         section.appendChild(deck);
         deck.appendChild(front);
         deck.appendChild(back);
@@ -88,7 +87,7 @@ const checkDecks = (e) => {
     };
 
 const restart = (message) => {
-    deckImages = shuffle();
+    const deckImages = shuffle();
     const front = document.querySelectorAll(".front");
     const deck = document.querySelectorAll(".deck");
     section.style.pointerEvents = "none";
