@@ -5,22 +5,22 @@ let mindMoves = 8;
 mindMovesCount.textContent = mindMoves;
 
 const getData = () => [
-    { imgSrc: "/assets/images/learning-1.jpg", name: "learning-1"},
-    { imgSrc: "/assets/images/learning-2.jpg", name: "learning-2"},
-    { imgSrc: "/assets/images/learning-3.jpg", name: "learning-3"},
-    { imgSrc: "/assets/images/learning-4.jpg", name: "learning-4"},
-    { imgSrc: "/assets/images/learning-5.jpg", name: "learning-5"},
-    { imgSrc: "/assets/images/learning-6.jpg", name: "learning-6"},
-    { imgSrc: "/assets/images/learning-7.jpg", name: "learning-7"},
-    { imgSrc: "/assets/images/learning-8.jpg", name: "learning-8"},
-    { imgSrc: "/assets/images/learning-1.jpg", name: "learning-1"},
-    { imgSrc: "/assets/images/learning-2.jpg", name: "learning-2"},
-    { imgSrc: "/assets/images/learning-3.jpg", name: "learning-3"},
-    { imgSrc: "/assets/images/learning-4.jpg", name: "learning-4"},
-    { imgSrc: "/assets/images/learning-5.jpg", name: "learning-5"},
-    { imgSrc: "/assets/images/learning-6.jpg", name: "learning-6"},
-    { imgSrc: "/assets/images/learning-7.jpg", name: "learning-7"},
-    { imgSrc: "/assets/images/learning-8.jpg", name: "learning-8"},
+    { imgSrc: "assets/images/learning-1.jpg", name: "learning-1"},
+    { imgSrc: "assets/images/learning-2.jpg", name: "learning-2"},
+    { imgSrc: "assets/images/learning-3.jpg", name: "learning-3"},
+    { imgSrc: "assets/images/learning-4.jpg", name: "learning-4"},
+    { imgSrc: "assets/images/learning-5.jpg", name: "learning-5"},
+    { imgSrc: "assets/images/learning-6.jpg", name: "learning-6"},
+    { imgSrc: "assets/images/learning-7.jpg", name: "learning-7"},
+    { imgSrc: "assets/images/learning-8.jpg", name: "learning-8"},
+    { imgSrc: "assets/images/learning-1.jpg", name: "learning-1"},
+    { imgSrc: "assets/images/learning-2.jpg", name: "learning-2"},
+    { imgSrc: "assets/images/learning-3.jpg", name: "learning-3"},
+    { imgSrc: "assets/images/learning-4.jpg", name: "learning-4"},
+    { imgSrc: "assets/images/learning-5.jpg", name: "learning-5"},
+    { imgSrc: "assets/images/learning-6.jpg", name: "learning-6"},
+    { imgSrc: "assets/images/learning-7.jpg", name: "learning-7"},
+    { imgSrc: "assets/images/learning-8.jpg", name: "learning-8"},
     ];
 
 const shuffle = () => {
