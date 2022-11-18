@@ -1,46 +1,47 @@
-var section = document.querySelector("section");
-var mindMovesCount = document.querySelector("span");
-var mindMoves = 8;
-var deckImages;
+const section = document.querySelector("section");
+const mindMovesCount = document.querySelector("span");
+let mindMoves = 8;
+let deckImages;
 
 mindMovesCount.textContent = mindMoves;
 
-var getImages = () => [
-    { imgSrc: "assets/images/learning-1.jpg", name: "learning-1"},
-    { imgSrc: "assets/images/learning-2.jpg", name: "learning-2"},
-    { imgSrc: "assets/images/learning-3.jpg", name: "learning-3"},
-    { imgSrc: "assets/images/learning-4.jpg", name: "learning-4"},
-    { imgSrc: "assets/images/learning-5.jpg", name: "learning-5"},
-    { imgSrc: "assets/images/learning-6.jpg", name: "learning-6"},
-    { imgSrc: "assets/images/learning-7.jpg", name: "learning-7"},
-    { imgSrc: "assets/images/learning-8.jpg", name: "learning-8"},
-    { imgSrc: "assets/images/learning-1.jpg", name: "learning-1"},
-    { imgSrc: "assets/images/learning-2.jpg", name: "learning-2"},
-    { imgSrc: "assets/images/learning-3.jpg", name: "learning-3"},
-    { imgSrc: "assets/images/learning-4.jpg", name: "learning-4"},
-    { imgSrc: "assets/images/learning-5.jpg", name: "learning-5"},
-    { imgSrc: "assets/images/learning-6.jpg", name: "learning-6"},
-    { imgSrc: "assets/images/learning-7.jpg", name: "learning-7"},
-    { imgSrc: "assets/images/learning-8.jpg", name: "learning-8"},
+const getImages = () => [
+    { imgSrc: "assets/images/learning-1.png", name: "learning-1", alt: "Mind picture"},
+    { imgSrc: "assets/images/learning-2.png", name: "learning-2", alt: "Mind picture"},
+    { imgSrc: "assets/images/learning-3.png", name: "learning-3", alt: "Mind picture"},
+    { imgSrc: "assets/images/learning-4.png", name: "learning-4", alt: "Mind picture"},
+    { imgSrc: "assets/images/learning-5.png", name: "learning-5", alt: "Mind picture"},
+    { imgSrc: "assets/images/learning-6.png", name: "learning-6", alt: "Mind picture"},
+    { imgSrc: "assets/images/learning-7.png", name: "learning-7", alt: "Mind picture"},
+    { imgSrc: "assets/images/learning-8.png", name: "learning-8", alt: "Mind picture"},
+    { imgSrc: "assets/images/learning-1.png", name: "learning-1", alt: "Mind picture"},
+    { imgSrc: "assets/images/learning-2.png", name: "learning-2", alt: "Mind picture"},
+    { imgSrc: "assets/images/learning-3.png", name: "learning-3", alt: "Mind picture"},
+    { imgSrc: "assets/images/learning-4.png", name: "learning-4", alt: "Mind picture"},
+    { imgSrc: "assets/images/learning-5.png", name: "learning-5", alt: "Mind picture"},
+    { imgSrc: "assets/images/learning-6.png", name: "learning-6", alt: "Mind picture"},
+    { imgSrc: "assets/images/learning-7.png", name: "learning-7", alt: "Mind picture"},
+    { imgSrc: "assets/images/learning-8.png", name: "learning-8", alt: "Mind picture"},
     ];
 
-var shuffle = () => {
+const shuffle = () => {
     deckImages = getImages();
     deckImages.sort(() => Math.random() - 0.5);
     return deckImages;
 };
 
-var deckCreator = () => {
+const deckCreator = () => {
     deckImages = shuffle();
     deckImages.forEach((item) => {
-        var deck = document.createElement("div");
-        var front = document.createElement("img");
-        var back = document.createElement("div");
+        const deck = document.createElement("div");
+        const front = document.createElement("img");
+        const back = document.createElement("div");
         deck.classList = "deck";
         front.classList = "front";
         back.classList = "back";
         front.src = item.imgSrc;
-        deck.setAttribute("name", item.name); 
+        deck.setAttribute("name", item.name);
+        front.setAttribute("alt", item.alt) 
         section.appendChild(deck);
         deck.appendChild(front);
         deck.appendChild(back);
@@ -51,11 +52,11 @@ var deckCreator = () => {
     });
 };
 
-var checkDecks = (e) => {
-    var clickedDeck = e.target;
+const checkDecks = (e) => {
+    const clickedDeck = e.target;
     clickedDeck.classList.add("turned");
-    var turnedDecks = document.querySelectorAll(".turned");
-    var toggleDeck = document.querySelectorAll(".toggleDeck");
+    const turnedDecks = document.querySelectorAll(".turned");
+    const toggleDeck = document.querySelectorAll(".toggleDeck");
     if (turnedDecks.length === 2) {
         if (
             turnedDecks[0].getAttribute("name") === 
@@ -86,10 +87,10 @@ var checkDecks = (e) => {
         }
     };
 
-var restart = (message) => {
+const restart = (message) => {
     deckImages = shuffle();
-    var front = document.querySelectorAll(".front");
-    var deck = document.querySelectorAll(".deck");
+    const front = document.querySelectorAll(".front");
+    const deck = document.querySelectorAll(".deck");
     section.style.pointerEvents = "none";
     deckImages.forEach((item, index) => {
         deck[index].classList.remove("toggleDeck");

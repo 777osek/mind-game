@@ -43,6 +43,10 @@ section {
     border-radius: 1rem;
 }
 
+.front {
+    background-size: auto;
+}
+
 .back {
     background: #a940c9;
     backface-visibility: hidden;
