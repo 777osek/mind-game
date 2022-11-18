@@ -1,10 +1,11 @@
-const section = document.querySelector("section");
-const mindMovesCount = document.querySelector("span");
-let mindMoves = 8;
+var section = document.querySelector("section");
+var mindMovesCount = document.querySelector("span");
+var mindMoves = 8;
+var deckImages;
 
 mindMovesCount.textContent = mindMoves;
 
-const getData = () => [
+var getImages = () => [
     { imgSrc: "assets/images/learning-1.jpg", name: "learning-1"},
     { imgSrc: "assets/images/learning-2.jpg", name: "learning-2"},
     { imgSrc: "assets/images/learning-3.jpg", name: "learning-3"},
@@ -23,18 +24,18 @@ const getData = () => [
     { imgSrc: "assets/images/learning-8.jpg", name: "learning-8"},
     ];
 
-const shuffle = () => {
-    const deckData = getData();
-    deckData.sort(() => Math.random() - 0.5);
-    return deckData;
+var shuffle = () => {
+    deckImages = getImages();
+    deckImages.sort(() => Math.random() - 0.5);
+    return deckImages;
 };
 
-const deckCreator = () => {
-    const deckData = shuffle();
-    deckData.forEach((item) => {
-        const deck = document.createElement("div");
-        const front = document.createElement("img");
-        const back = document.createElement("div");
+var deckCreator = () => {
+    deckImages = shuffle();
+    deckImages.forEach((item) => {
+        var deck = document.createElement("div");
+        var front = document.createElement("img");
+        var back = document.createElement("div");
         deck.classList = "deck";
         front.classList = "front";
         back.classList = "back";
@@ -50,23 +51,23 @@ const deckCreator = () => {
     });
 };
 
-const checkDecks = (e) => {
-    const clickedDeck = e.target;
+var checkDecks = (e) => {
+    var clickedDeck = e.target;
     clickedDeck.classList.add("turned");
-    const turnedDecks = document.querySelectorAll(".turned");
-    const toggleDeck = document.querySelectorAll(".toggleDeck")
+    var turnedDecks = document.querySelectorAll(".turned");
+    var toggleDeck = document.querySelectorAll(".toggleDeck");
     if (turnedDecks.length === 2) {
         if (
             turnedDecks[0].getAttribute("name") === 
             turnedDecks[1].getAttribute("name")
             ) {
-                console.log("match");
+                console.log("match"); //This checks for a match
                 turnedDecks.forEach((deck) => {
                     deck.classList.remove("turned");
                     deck.style.pointerEvents = "none";
                 });
             } else {
-                console.log("wrong");
+                console.log("wrong"); //This checks for no match
                 turnedDecks.forEach((deck) => {
                     deck.classList.remove("turned");
                     setTimeout(() => deck.classList.remove("toggleDeck"), 1000);
@@ -74,23 +75,23 @@ const checkDecks = (e) => {
                 mindMoves --;
                 mindMovesCount.textContent = mindMoves;
                 if (mindMoves === 0) {
-                    restart("Good work - You are almost there 😃");
+                    restart("Good work - You are almost there 😃"); //Result message when the game is not solved
                 }
             }
         }
         if (toggleDeck.length === 16) {
             setTimeout(() => {
-                restart("Yes You made 😍 IT !");
-            }, 2000);
+                restart("Yes You made 😍 IT !"); //Result message when the game is solved
+            }, 2500);
         }
     };
 
-const restart = (message) => {
-    let deckData = shuffle();
-    let front = document.querySelectorAll(".front");
-    let deck = document.querySelectorAll(".deck");
+var restart = (message) => {
+    deckImages = shuffle();
+    var front = document.querySelectorAll(".front");
+    var deck = document.querySelectorAll(".deck");
     section.style.pointerEvents = "none";
-    deckData.forEach((item, index) => {
+    deckImages.forEach((item, index) => {
         deck[index].classList.remove("toggleDeck");
         setTimeout(() => {
             deck[index].style.pointerEvents = "all";
