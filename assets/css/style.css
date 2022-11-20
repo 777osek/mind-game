@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Roboto:wght@300&display=swap");
 
+/* Base styling of the page at start */
 * {
     padding: 0;
     margin: 0;
@@ -10,6 +11,7 @@
     background-color: #cac4ce;
 }
 
+/* Set the base style of the memory game index.html page */
 body {
    height: 100vh;
    display: flex;
@@ -18,6 +20,7 @@ body {
    flex-direction: column;
 }
 
+/* The memory game area styling on screen sizes >= 890px */
 section {
     display: grid;
     grid-template-columns: repeat(4,12rem);
@@ -26,6 +29,7 @@ section {
     perspective: 800px;
 }
 
+/* The memory game base deck styling at start of each game*/
 .deck {
     position: relative;
     transform-style: preserve-3d;
@@ -34,6 +38,7 @@ section {
     border-radius: 1rem;
 }
 
+/* The base memory game back-side and front-side (image-side) styling*/
 .front,
 .back {
     width: 100%;
@@ -43,15 +48,18 @@ section {
     border-radius: 1rem;
 }
 
+/* Base styling of back-side so the front-side image is not visible */
 .back {
     background: #a940c9;
     backface-visibility: hidden;
 }
 
-.toggleDeck {
-    transform: rotateY(0.5turn);
-}
-
+/* Styling to present the image on the front-side after it is turned (toggled) in the right way to the player */
 .front {
     transform: rotateY(-0.5turn);
+}
+
+/* The styling of rotation when player clicks on the memory game and returns when a no match or restarted game */
+.toggleDeck {
+    transform: rotateY(0.5turn);
 }

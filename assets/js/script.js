@@ -1,9 +1,24 @@
+/**
+ * The goal is to build/create a menory game based on, give the player a greatfull mind when they play
+ * First we set the declartion of the menory game area "section" and how many moves the player has to solve the game on
+ * Second is to declare all menory game images in the function "getImages"
+ * Then shuffle (mix) all images in a function called "shuffle"
+ * Then the function "deckCreator" builds/creats the html parts in the mamory game area "section" in the index.html
+ * Check if palyer has clicked on the menory game board in the function "checkDecks" if a match or if not a match, also the end result message win or loose
+ * After win or loose the function "restart" is called and present the end result message to the screen
+ * Final is activate the function "deckCreator"
+ */
+
+// Declaration of the memory game player moves
 const section = document.querySelector("section");
 const mindMovesCount = document.querySelector("span");
 let mindMoves = 8;
 
+// Set the start value of player moves per menory game
 mindMovesCount.textContent = mindMoves;
 
+
+// Set the array of all memory game images
 const getImages = () => [
     { imgSrc: "assets/images/learning-1.png", name: "learning-1", alt: "Mind picture"},
     { imgSrc: "assets/images/learning-2.png", name: "learning-2", alt: "Mind picture"},
@@ -23,12 +38,14 @@ const getImages = () => [
     { imgSrc: "assets/images/learning-8.png", name: "learning-8", alt: "Mind picture"},
     ];
 
+// Start to shuffles/mixing all memory game images
 const shuffle = () => {
     const deckImages = getImages();
     deckImages.sort(() => Math.random() - 0.5);
     return deckImages;
 };
 
+// Builds/creates the memory game area in the index.html page under "section"
 const deckCreator = () => {
     const deckImages = shuffle();
     deckImages.forEach((item) => {
@@ -51,6 +68,7 @@ const deckCreator = () => {
     });
 };
 
+// Check players clicks on the memory game board, if it is a match or not 
 const checkDecks = (e) => {
     const clickedDeck = e.target;
     clickedDeck.classList.add("turned");
@@ -61,13 +79,11 @@ const checkDecks = (e) => {
             turnedDecks[0].getAttribute("name") === 
             turnedDecks[1].getAttribute("name")
             ) {
-                console.log("match"); //This checks for a match
                 turnedDecks.forEach((deck) => {
                     deck.classList.remove("turned");
                     deck.style.pointerEvents = "none";
                 });
             } else {
-                console.log("wrong"); //This checks for no match
                 turnedDecks.forEach((deck) => {
                     deck.classList.remove("turned");
                     setTimeout(() => deck.classList.remove("toggleDeck"), 1000);
@@ -86,6 +102,7 @@ const checkDecks = (e) => {
         }
     };
 
+// Resets the memory game and present win or loose message on the screen    
 const restart = (message) => {
     const deckImages = shuffle();
     const front = document.querySelectorAll(".front");
@@ -105,4 +122,5 @@ const restart = (message) => {
     setTimeout(() => window.alert(message), 500);
 };
 
+// Activates the building of the html parts for the memory game
 deckCreator();
