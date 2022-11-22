@@ -20,22 +20,22 @@ mindMovesCount.textContent = mindMoves;
 
 // Set the array of all memory game images
 const getImages = () => [
-    { imgSrc: "assets/images/learning-1.png", name: "learning-1", alt: "Mind picture"},
-    { imgSrc: "assets/images/learning-2.png", name: "learning-2", alt: "Mind picture"},
-    { imgSrc: "assets/images/learning-3.png", name: "learning-3", alt: "Mind picture"},
-    { imgSrc: "assets/images/learning-4.png", name: "learning-4", alt: "Mind picture"},
-    { imgSrc: "assets/images/learning-5.png", name: "learning-5", alt: "Mind picture"},
-    { imgSrc: "assets/images/learning-6.png", name: "learning-6", alt: "Mind picture"},
-    { imgSrc: "assets/images/learning-7.png", name: "learning-7", alt: "Mind picture"},
-    { imgSrc: "assets/images/learning-8.png", name: "learning-8", alt: "Mind picture"},
-    { imgSrc: "assets/images/learning-1.png", name: "learning-1", alt: "Mind picture"},
-    { imgSrc: "assets/images/learning-2.png", name: "learning-2", alt: "Mind picture"},
-    { imgSrc: "assets/images/learning-3.png", name: "learning-3", alt: "Mind picture"},
-    { imgSrc: "assets/images/learning-4.png", name: "learning-4", alt: "Mind picture"},
-    { imgSrc: "assets/images/learning-5.png", name: "learning-5", alt: "Mind picture"},
-    { imgSrc: "assets/images/learning-6.png", name: "learning-6", alt: "Mind picture"},
-    { imgSrc: "assets/images/learning-7.png", name: "learning-7", alt: "Mind picture"},
-    { imgSrc: "assets/images/learning-8.png", name: "learning-8", alt: "Mind picture"},
+    { imgSrc: "assets/images/learning-1.webp", name: "learning-1", alt: "Mind picture"},
+    { imgSrc: "assets/images/learning-2.webp", name: "learning-2", alt: "Mind picture"},
+    { imgSrc: "assets/images/learning-3.webp", name: "learning-3", alt: "Mind picture"},
+    { imgSrc: "assets/images/learning-4.webp", name: "learning-4", alt: "Mind picture"},
+    { imgSrc: "assets/images/learning-5.webp", name: "learning-5", alt: "Mind picture"},
+    { imgSrc: "assets/images/learning-6.webp", name: "learning-6", alt: "Mind picture"},
+    { imgSrc: "assets/images/learning-7.webp", name: "learning-7", alt: "Mind picture"},
+    { imgSrc: "assets/images/learning-8.webp", name: "learning-8", alt: "Mind picture"},
+    { imgSrc: "assets/images/learning-1.webp", name: "learning-1", alt: "Mind picture"},
+    { imgSrc: "assets/images/learning-2.webp", name: "learning-2", alt: "Mind picture"},
+    { imgSrc: "assets/images/learning-3.webp", name: "learning-3", alt: "Mind picture"},
+    { imgSrc: "assets/images/learning-4.webp", name: "learning-4", alt: "Mind picture"},
+    { imgSrc: "assets/images/learning-5.webp", name: "learning-5", alt: "Mind picture"},
+    { imgSrc: "assets/images/learning-6.webp", name: "learning-6", alt: "Mind picture"},
+    { imgSrc: "assets/images/learning-7.webp", name: "learning-7", alt: "Mind picture"},
+    { imgSrc: "assets/images/learning-8.webp", name: "learning-8", alt: "Mind picture"},
     ];
 
 // Start to shuffles/mixing all memory game images

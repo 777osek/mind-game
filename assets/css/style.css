@@ -12,7 +12,6 @@
 
 /* Set the base style of the memory game index.html page */
 body {
-   /*height: 100vh;*/
    display: flex;
    justify-content: center;
    align-items: center;
