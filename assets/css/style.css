@@ -12,15 +12,17 @@
 
 /* Set the base style of the memory game index.html page */
 body {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-direction: column;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
+/* The header area styling on screen sizes >= 890px */
 .header {
-    height: 20vh;
-    font-size: 250%;
+    /*height: 10vh;*/
+    font-size: 200%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,6 +31,7 @@ body {
 
 /* The memory game area styling on screen sizes >= 890px */
 .game-area {
+   /* height: 90vh;*/
     display: grid;
     grid-template-columns: repeat(4,12rem);
     grid-template-rows: repeat(4,9rem);

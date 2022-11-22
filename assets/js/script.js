@@ -1,24 +1,24 @@
 /**
- * The goal is to build/create a menory game based on, give the player a greatfull mind when they play
- * First we set the declartion of the menory game area "section" and how many moves the player has to solve the game on
- * Second is to declare all menory game images in the function "getImages"
- * Then shuffle (mix) all images in a function called "shuffle"
- * Then the function "deckCreator" builds/creats the html parts in the mamory game area "section" in the index.html
- * Check if palyer has clicked on the menory game board in the function "checkDecks" if a match or if not a match, also the end result message win or loose
- * After win or loose the function "restart" is called and present the end result message to the screen
- * Final is activate the function "deckCreator"
+ * The goal is to create a memory game based on positive thinking, give the player a grateful mind when they play
+ * 1) The DOM declaration of the memory game area and how many moves the player has to solve the game on
+ * 2) Declare an array function for all memory game images
+ * 3) Shuffle (mix) all images
+ * 4) The function "deckCreator" creates the html parts for the memory game area to the class "game-area" in the index.html
+ * 5) Checker - if the player has clicked on the memory game area (board) to check if it is a match or not a match, also the end result message win or loose
+ * 6) After win or loose the result message is presented to the screen, and when OK is clicked the game is reset
+ * 7) Here is the function "deckCreator" activated [Item 4]
  */
 
-// Declaration of the memory game area & player moves
-const memoryGame = document.querySelector(".game-area");
-const mindMovesCount = document.querySelector("span");
+// Declaration of the memory game area DOM & player moves 
+const gameAreaDom = document.querySelector(".game-area");
+const mindMovesCount = document.querySelector(".mind-moves-count");
 let mindMoves = 8;
 
-// Set the start value of player moves per menory game
+// Set the start value of player moves per memory game
 mindMovesCount.textContent = mindMoves;
 
 
-// Set the array of all memory game images
+// Declare getImages as a array for all memory game images
 const getImages = () => [
     { imgSrc: "assets/images/learning-1.webp", name: "learning-1", alt: "Mind picture"},
     { imgSrc: "assets/images/learning-2.webp", name: "learning-2", alt: "Mind picture"},
@@ -38,14 +38,14 @@ const getImages = () => [
     { imgSrc: "assets/images/learning-8.webp", name: "learning-8", alt: "Mind picture"},
     ];
 
-// Start to shuffles/mixing all memory game images
+// Start to shuffle/mixing the memory game deck images
 const shuffle = () => {
     const deckImages = getImages();
     deckImages.sort(() => Math.random() - 0.5);
     return deckImages;
 };
 
-// Builds/creates the memory game area in the index.html page under "section"
+// Creates the memory game area in the index.html page under "section class="game-area"
 const deckCreator = () => {
     const deckImages = shuffle();
     deckImages.forEach((item) => {
@@ -58,7 +58,7 @@ const deckCreator = () => {
         front.src = item.imgSrc;
         deck.setAttribute("name", item.name);
         front.setAttribute("alt", item.alt); 
-        memoryGame.appendChild(deck);
+        gameAreaDom.appendChild(deck);
         deck.appendChild(front);
         deck.appendChild(back);
         deck.addEventListener("click", (e) => {
@@ -86,40 +86,42 @@ const checkDecks = (e) => {
             } else {
                 turnedDecks.forEach((deck) => {
                     deck.classList.remove("turned");
-                    setTimeout(() => deck.classList.remove("toggleDeck"), 1000);
+                    setTimeout(() => deck.classList.remove("toggleDeck"), 1500);
                 });
                 mindMoves --;
                 mindMovesCount.textContent = mindMoves;
                 if (mindMoves === 0) {
+                    setTimeout(() => {
                     restart("Good work - You are almost there 😃"); //Result message when the game is not solved
+                    }, 1500);
                 }
             }
         }
-        if (toggleDeck.length === 16) {
-            setTimeout(() => {
-                restart("Yes You made 😍 IT !"); //Result message when the game is solved
-            }, 2500);
-        }
-    };
+    if (toggleDeck.length === 16) {
+        setTimeout(() => {
+            restart("Yes You made 😍 IT !"); //Result message when the game is solved
+        }, 1500);
+    }
+};
 
-// Resets the memory game and present win or loose message on the screen    
+// Present a message win or loose as a window alert, when OK clicked it resets the memory game    
 const restart = (message) => {
+    window.alert(message);
     const deckImages = shuffle();
     const front = document.querySelectorAll(".front");
     const deck = document.querySelectorAll(".deck");
-    memoryGame.style.pointerEvents = "none";
+    gameAreaDom.style.pointerEvents = "none";
     deckImages.forEach((item, index) => {
         deck[index].classList.remove("toggleDeck");
         setTimeout(() => {
             deck[index].style.pointerEvents = "all";
             front[index].src = item.imgSrc;
             deck[index].setAttribute("name", item.name);
-            memoryGame.style.pointerEvents = "all";
+            gameAreaDom.style.pointerEvents = "all";
         }, 1000);
     });
     mindMoves = 8;
     mindMovesCount.textContent = mindMoves;
-    setTimeout(() => window.alert(message), 500);
 };
 
 // Activates the building of the html parts for the memory game
