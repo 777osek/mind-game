@@ -6,22 +6,30 @@
     margin: 0;
     box-sizing: border-box;
     font-family: roboto, sans-serif;
-    font-weight: 300;
     color: black;
     background-color: #cac4ce;
 }
 
 /* Set the base style of the memory game index.html page */
 body {
-   height: 100vh;
+   /*height: 100vh;*/
    display: flex;
    justify-content: center;
    align-items: center;
    flex-direction: column;
 }
 
+.header {
+    height: 20vh;
+    font-size: 250%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 /* The memory game area styling on screen sizes >= 890px */
-section {
+.game-area {
     display: grid;
     grid-template-columns: repeat(4,12rem);
     grid-template-rows: repeat(4,9rem);

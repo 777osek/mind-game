@@ -9,8 +9,8 @@
  * Final is activate the function "deckCreator"
  */
 
-// Declaration of the memory game player moves
-const section = document.querySelector("section");
+// Declaration of the memory game area & player moves
+const memoryGame = document.querySelector(".game-area");
 const mindMovesCount = document.querySelector("span");
 let mindMoves = 8;
 
@@ -58,7 +58,7 @@ const deckCreator = () => {
         front.src = item.imgSrc;
         deck.setAttribute("name", item.name);
         front.setAttribute("alt", item.alt); 
-        section.appendChild(deck);
+        memoryGame.appendChild(deck);
         deck.appendChild(front);
         deck.appendChild(back);
         deck.addEventListener("click", (e) => {
@@ -107,14 +107,14 @@ const restart = (message) => {
     const deckImages = shuffle();
     const front = document.querySelectorAll(".front");
     const deck = document.querySelectorAll(".deck");
-    section.style.pointerEvents = "none";
+    memoryGame.style.pointerEvents = "none";
     deckImages.forEach((item, index) => {
         deck[index].classList.remove("toggleDeck");
         setTimeout(() => {
             deck[index].style.pointerEvents = "all";
             front[index].src = item.imgSrc;
             deck[index].setAttribute("name", item.name);
-            section.style.pointerEvents = "all";
+            memoryGame.style.pointerEvents = "all";
         }, 1000);
     });
     mindMoves = 8;
