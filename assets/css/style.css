@@ -10,6 +10,108 @@
     background-color: #cac4ce;
 }
 
+#logo {
+    margin: 0;
+    float: left;
+    font-size: 280%;
+    margin-left: 30px;
+}
+
+
+/* navigation for all pages*/
+.menu {
+    font-size: 130%;
+    letter-spacing: 1px;
+}
+
+.menu,
+.logo {
+    line-height: 75px;
+}
+
+.menu li {
+    float: right;
+    list-style-type: none;
+    margin-right: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    padding: 5px;
+    background-color: #fff;
+    border-bottom: 2px solid #a940c9;
+}
+
+.active {
+    padding: 5px;
+    border-bottom: 2px solid #a940c9;
+}
+
+/* section for CTA start the memory game button in index.html */
+
+.start-game {
+    width: 100%;
+}
+
+.cta-start-text {
+    clear: both;
+    width: 100%;
+    text-align: center;
+    text-transform: none;
+    margin: 20px;
+    font-size: 230%;
+}
+
+.cta-start {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+/* the start button is generated from https://buttonoptimizer.com/ */
+
+.cta-start-button {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 21px 40px;
+    border: 1px solid #88339d;
+    border-radius: 8px;
+    background: #dd53ff;
+    background: -moz-linear-gradient(top, #dd53ff, #88339d);
+    background: linear-gradient(to bottom, #dd53ff, #88339d);
+    -webkit-box-shadow: #cc4deb 0px 0px 40px 0px;
+    -moz-box-shadow: #cc4deb 0px 0px 40px 0px;
+    box-shadow: #cc4deb 0px 0px 40px 0px;
+    font: normal normal bold 30px arial;
+    color: #ffffff;
+    text-decoration: none;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.cta-start-button:hover, 
+.cta-start-button:focus {
+    border: 1px solid #aa40c4;
+    background: #ff64ff;
+    background: -moz-linear-gradient(top, #ff64ff, #a33dbc);
+    background: linear-gradient(to bottom, #ff64ff, #a33dbc);
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.cta-start-button:active {
+    background: #88339d;
+    background: -moz-linear-gradient(top, #88339d, #88339d);
+    background: linear-gradient(to bottom, #88339d, #88339d);
+}
+
+
 /* Set the base style of the memory game index.html page */
 body {
     height: 100vh;
