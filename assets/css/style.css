@@ -19,15 +19,10 @@ body {
     background-color: #cac4ce;
 }
 
-
 .logo {
-    /*margin: 0;
-    float: left;*/
     font-size: 280%;
-    /*margin-left: 30px;*/
     text-decoration-line: none;
 }
-
 
 /* navigation for all pages*/
 .menu {
@@ -45,9 +40,7 @@ body {
 }
 
 .menu li {
-    /*float: right;*/
     list-style-type: none;
-    /*margin-right: 20px;*/
 }
 
 .menu a {
@@ -66,6 +59,19 @@ body {
 .active {
     padding: 5px;
     border-bottom: 2px solid #a940c9;
+}
+
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.about > p {
+    width: 70%;
+    font-size: 120%;
+    text-align: left;
 }
 
 /* section for CTA start the memory game button in index.html */
