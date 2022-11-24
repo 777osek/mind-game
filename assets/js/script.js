@@ -3,10 +3,10 @@
  * 1) The DOM declaration of the memory game area and how many moves the player has to solve the game on
  * 2) Declare an array function for all memory game images
  * 3) Shuffle (mix) all images
- * 4) The function "deckCreator" creates the html parts for the memory game area to the class "game-area" in the index.html
+ * 4) The function "cardCreator" creates the html parts for the memory game area to the class "game-area" in the index.html
  * 5) Checker - if the player has clicked on the memory game area (board) to check if it is a match or not a match, also the end result message win or loose
  * 6) After win or loose the result message is presented to the screen, and when OK is clicked the game is reset
- * 7) Here is the function "deckCreator" activated [Item 4]
+ * 7) Here is the function "cardCreator" activated [Item 4]
  */
 
 // Declaration of the memory game area DOM & player moves 
@@ -38,55 +38,55 @@ const getImages = () => [
     { imgSrc: "assets/images/learning-8.webp", name: "learning-8", alt: "Mind picture"},
     ];
 
-// Start to shuffle/mixing the memory game deck images
+// Start to shuffle/mixing the memory game card images
 const shuffle = () => {
-    const deckImages = getImages();
-    deckImages.sort(() => Math.random() - 0.5);
-    return deckImages;
+    const cardImages = getImages();
+    cardImages.sort(() => Math.random() - 0.5);
+    return cardImages;
 };
 
 // Creates the memory game area in the index.html page under "section class="game-area"
-const deckCreator = () => {
-    const deckImages = shuffle();
-    deckImages.forEach((item) => {
-        const deck = document.createElement("div");
+const cardCreator = () => {
+    const cardImages = shuffle();
+    cardImages.forEach((item) => {
+        const card = document.createElement("div");
         const front = document.createElement("img");
         const back = document.createElement("div");
-        deck.classList = "deck";
+        card.classList = "card";
         front.classList = "front";
         back.classList = "back";
         front.src = item.imgSrc;
-        deck.setAttribute("name", item.name);
+        card.setAttribute("name", item.name);
         front.setAttribute("alt", item.alt); 
-        gameAreaDom.appendChild(deck);
-        deck.appendChild(front);
-        deck.appendChild(back);
-        deck.addEventListener("click", (e) => {
-            deck.classList.toggle("toggleDeck");
-            checkDecks(e);
+        gameAreaDom.appendChild(card);
+        card.appendChild(front);
+        card.appendChild(back);
+        card.addEventListener("click", (e) => {
+            card.classList.toggle("toggleCard");
+            checkCards(e);
         });
     });
 };
 
 // Check players clicks on the memory game board, if it is a match or not 
-const checkDecks = (e) => {
-    const clickedDeck = e.target;
-    clickedDeck.classList.add("turned");
-    const turnedDecks = document.querySelectorAll(".turned");
-    const toggleDeck = document.querySelectorAll(".toggleDeck");
-    if (turnedDecks.length === 2) {
+const checkCards = (e) => {
+    const clickedCard = e.target;
+    clickedCard.classList.add("turned");
+    const turnedCards = document.querySelectorAll(".turned");
+    const toggleCard = document.querySelectorAll(".toggleCard");
+    if (turnedCards.length === 2) {
         if (
-            turnedDecks[0].getAttribute("name") === 
-            turnedDecks[1].getAttribute("name")
+            turnedCards[0].getAttribute("name") === 
+            turnedCards[1].getAttribute("name")
             ) {
-                turnedDecks.forEach((deck) => {
-                    deck.classList.remove("turned");
-                    deck.style.pointerEvents = "none";
+                turnedCards.forEach((card) => {
+                    card.classList.remove("turned");
+                    card.style.pointerEvents = "none";
                 });
             } else {
-                turnedDecks.forEach((deck) => {
-                    deck.classList.remove("turned");
-                    setTimeout(() => deck.classList.remove("toggleDeck"), 1500);
+                turnedCards.forEach((card) => {
+                    card.classList.remove("turned");
+                    setTimeout(() => card.classList.remove("toggleCard"), 1500);
                 });
                 mindMoves --;
                 mindMovesCount.textContent = mindMoves;
@@ -97,7 +97,7 @@ const checkDecks = (e) => {
                 }
             }
         }
-    if (toggleDeck.length === 16) {
+    if (toggleCard.length === 16) {
         setTimeout(() => {
             restart("Yes You made 😍 IT !"); //Result message when the game is solved
         }, 1500);
@@ -107,16 +107,16 @@ const checkDecks = (e) => {
 // Present a message win or loose as a window alert, when OK clicked it resets the memory game    
 const restart = (message) => {
     window.alert(message);
-    const deckImages = shuffle();
+    const cardImages = shuffle();
     const front = document.querySelectorAll(".front");
-    const deck = document.querySelectorAll(".deck");
+    const card = document.querySelectorAll(".card");
     gameAreaDom.style.pointerEvents = "none";
-    deckImages.forEach((item, index) => {
-        deck[index].classList.remove("toggleDeck");
+    cardImages.forEach((item, index) => {
+        card[index].classList.remove("toggleCard");
         setTimeout(() => {
-            deck[index].style.pointerEvents = "all";
+            card[index].style.pointerEvents = "all";
             front[index].src = item.imgSrc;
-            deck[index].setAttribute("name", item.name);
+            card[index].setAttribute("name", item.name);
             gameAreaDom.style.pointerEvents = "all";
         }, 1000);
     });
@@ -125,4 +125,4 @@ const restart = (message) => {
 };
 
 // Activates the building of the html parts for the memory game
-deckCreator();
+cardCreator();

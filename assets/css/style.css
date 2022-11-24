@@ -7,14 +7,25 @@
     box-sizing: border-box;
     font-family: roboto, sans-serif;
     color: black;
+}
+
+/* Set the base style of the memory game index.html page */
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
     background-color: #cac4ce;
 }
 
-#logo {
-    margin: 0;
-    float: left;
+
+.logo {
+    /*margin: 0;
+    float: left;*/
     font-size: 280%;
-    margin-left: 30px;
+    /*margin-left: 30px;*/
+    text-decoration-line: none;
 }
 
 
@@ -22,6 +33,10 @@
 .menu {
     font-size: 130%;
     letter-spacing: 1px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row-reverse;
 }
 
 .menu,
@@ -30,12 +45,13 @@
 }
 
 .menu li {
-    float: right;
+    /*float: right;*/
     list-style-type: none;
-    margin-right: 20px;
+    /*margin-right: 20px;*/
 }
 
 .menu a {
+    padding: 5px;
     text-decoration: none;
     color: inherit;
     font-weight: bold;
@@ -53,12 +69,7 @@
 }
 
 /* section for CTA start the memory game button in index.html */
-
-.start-game {
-    width: 100%;
-}
-
-.cta-start-text {
+.start-game-text {
     clear: both;
     width: 100%;
     text-align: center;
@@ -71,10 +82,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
 
 /* the start button is generated from https://buttonoptimizer.com/ */
-
 .cta-start-button {
     display: inline-block;
     text-align: center;
@@ -111,29 +121,13 @@
     background: linear-gradient(to bottom, #88339d, #88339d);
 }
 
-
-/* Set the base style of the memory game index.html page */
-body {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
 /* The header area styling on screen sizes >= 890px */
-.header {
-    /*height: 10vh;*/
-    font-size: 200%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.game-moves {
+    font-size: 230%;
 }
 
 /* The memory game area styling on screen sizes >= 890px */
 .game-area {
-   /* height: 90vh;*/
     display: grid;
     grid-template-columns: repeat(4,12rem);
     grid-template-rows: repeat(4,9rem);
@@ -141,8 +135,8 @@ body {
     perspective: 800px;
 }
 
-/* The memory game base deck styling at start of each game*/
-.deck {
+/* The memory game base card styling at start of each game*/
+.card {
     position: relative;
     transform-style: preserve-3d;
     transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -172,6 +166,39 @@ body {
 }
 
 /* The styling of rotation when player clicks on the memory game and returns when a no match or restarted game */
-.toggleDeck {
+.toggleCard {
     transform: rotateY(0.5turn);
+}
+
+/* footer for all pages*/
+
+.end-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgba(169, 64, 201, .3);
+    color: black;
+    text-align: center;
+}
+
+.mission > p {
+    font-size: 120%;
+    margin-bottom: 10px;
+}
+
+.social-networks {
+    text-align: center;
+    margin: auto;
+}
+
+.social-networks > li {
+    display: inline;
+}
+
+.social-networks i {
+    font-size: 200%;
+    padding: 15px 30px;
+    color: black;
 }
