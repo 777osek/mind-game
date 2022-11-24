@@ -79,7 +79,7 @@ body {
     text-align: left;
 }
 
-/* section for CTA start the memory game button in index.html */
+/* CTA to start the memory game */
 .start-game-text {
     width: 100%;
     text-align: center;
@@ -131,12 +131,11 @@ body {
     background: linear-gradient(to bottom, #88339d, #88339d);
 }
 
-/* The header area styling on screen sizes >= 890px */
+/* The memory game area */
 .game-moves {
     font-size: 150%;
 }
 
-/* The memory game area styling on screen sizes >= 890px */
 .game-area {
     display: grid;
     grid-template-columns: repeat(4,5.599rem);
@@ -181,7 +180,6 @@ body {
 }
 
 /* footer for all pages*/
-
 .end-section {
     display: flex;
     justify-content: space-around;
@@ -211,4 +209,126 @@ body {
     font-size: 120%;
     padding: 10px 20px;
     color: black;
+}
+
+/* media screen min-width 750px */
+@media screen and (min-width:750px) {
+    
+    /* The about text area how the game works */
+    .about > h1 {
+        font-size: 180%;
+    }
+    
+    .about > p {
+        width: 80%;
+        font-size: 150%;
+    }
+    
+    /* CTA to start the memory game */
+    .start-game-text {
+        font-size: 180%;
+    }
+
+    /* The memory game area */
+    .game-area {
+        grid-template-columns: repeat(4,10rem);
+        grid-template-rows: repeat(4,7.5rem);
+        grid-gap: 0.5rem;
+    }
+
+    .game-moves {
+        font-size: 200%;
+    }
+
+    /* The footer area */
+    .mission > p {
+        font-size: 120%;
+        margin-bottom: 10px;
+    }
+
+    .social-networks i {
+        font-size: 180%;
+        padding: 15px 30px;
+        color: black;
+    }
+}
+
+/* media screen min-width 1125px */
+
+@media screen and (min-width:1125px) {
+
+    .logo {
+        font-size: 280%;
+    }
+    
+    /* navigation for all pages*/
+    .menu {
+        font-size: 200%;
+    }
+    
+    .menu,
+    .logo {
+        line-height: 75px;
+    }
+    
+    /* The about text area how the game works */
+    .about > h1 {
+        font-size: 280%;
+    }
+    
+    .about > p {
+        width: 80%;
+        font-size: 200%;
+    }
+    
+    /* section for CTA start the memory game button in index.html */
+    .start-game-text {
+        font-size: 250%;
+    }
+    
+    .game-area {
+        grid-template-columns: repeat(4,14.69rem);
+        grid-template-rows: repeat(4,11rem);
+        grid-gap: 1rem;
+    }
+
+    /* The header area styling */
+    .game-moves {
+        font-size: 250%;
+    }
+
+    .cta-start-button {
+        -webkit-box-shadow: #cc4deb 0px 0px 30px 0px;
+        -moz-box-shadow: #cc4deb 0px 0px 30px 0px;
+        box-shadow: #cc4deb 0px 0px 30px 0px;
+        font: normal normal bold 30px arial;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .mission > p {
+        font-size: 150%;
+        margin-bottom: 10px;
+    }
+
+    .social-networks i {
+        font-size: 200%;
+        padding: 15px 30px;
+        color: black;
+    }
+}
+
+/* media screen min-width 1500px */
+@media screen and (min-width:1500px) {
+    /* The about text area how the game works */
+    .about > p {
+        width: 60%;
+        font-size: 200%;
+    }
+    /* The memory game area */
+    .game-area {
+        grid-template-columns: repeat(4,14.69rem);
+        grid-template-rows: repeat(4,11rem);
+        grid-gap: 2rem;
+    }
 }
