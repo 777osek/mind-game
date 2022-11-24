@@ -1,94 +1,93 @@
-# Greatful Mind Game
+# Grateful Mind Game
 
-Everyone need to practice and train there mind to be more happy and greatful. If we do this we create and develop a more positive mind activity. It will increase our memory with more positive thinking, hopefully even smile and be more happy in general. 
+Everyone needs to practice and train their mind to be happier and grateful. If we do this we create and develop a more positive mental activity. It will increase our memory with more positive thinking, hopefully even smile and be happier in general.
 
-For example; Greatful Mind Game is a site that hopes to help people practice and train there mind to both create and develop a more positive mind activity. This is a simple menory game (puzzel) that let you click on card that flipps and then shows different pictures, when two cards match you should find the next matching cards. When the whole game board is done it will start over again.
-
-(Need to update)![Responsice Mockup](https://github.com/lucyrush/readme-template/blob/master/media/love_running_mockup.png)
+For example; Grateful Mind Game is a site that wants to help people practice and train their minds to both create and develop a more positive mental activity. This is a simple memory game (puzzle) that let you click on the card that flips and then shows different pictures, when two cards match you should find the next matching card. When the whole game board is done it will start over again.
 
 ## Features 
 
-The site user's want to play an easy online game that has elements of practice and train there mind in a positive way.
+The site user wants to play an easy online game that has elements of practice and positively trains their mind. The user should be able to read and play the game from small mobile devices, tablets, and computers with screen sizes from 375px and up.  
 
-### Existing Features (Need to update)
+### Existing Features
 
-- __Greatful Mind Game (The landing page)__
+- __Greatful Mind Game (The landing & about page)__
 
-  - Featured on all pages, the full responsive site includes links to other pages. The title, navigation bar and footer is identical in each page to allow for easy view and navigation.
-  - This will allow the user to easily navigate from page to page across the site without having to revert back to the previous page via the ‘back’ button. 
+  - The landing page is where the user can read about how the Grateful Mind Game is working. The user have have the possibility to read the description first and then click on the button Start Memory game or use the menu with the same name.
+  - This will allow the user to easily navigate from page to page across the site without having to revert to the previous page via the ‘back’ button. 
 
-(Need to update)![Nav Bar](https://github.com/lucyrush/readme-template/blob/master/media/love_running_nav.png)
+![Responsice Mockup](media/responsive-index.png)
 
+- __The Memory Game Page__
+
+  - This is the Memory Game page where the baseline is equal to the landing & about page when it comes to the header and menu and footer section.
+  - The area between is the gaming area, first how many moves does the user have to solve the memory game board on then the Memory Game board with all the cards showing the backside up. When the user clicks on one card it will open the front side and after the second card is clicked it will check for matching. If so the user can keep clicking on the next card of the user's choice. If they don't match the cards that were opened will flip back, and the user needs to choose new cards. When the game is solved or the moves have ended the user will receive a screen message and need to click OK, then the game will be reset and can be played again. 
+
+![Responsice Mockup](media/responsive-memory-game.png)
+                                                                                                                                                                                                                                                
 - __The Footer__ 
 
-  - The footer section includes links to the relevant social media sites for further guidance to becoming a more happy and greatfull person. 
+  - The footer section includes links to the relevant social media sites for further guidance to becoming a more happy and more grateful person.
   - The footer is valuable to the user as it encourages them to keep connected via social media.
 
-(Need to update)![Footer](https://github.com/lucyrush/readme-template/blob/master/media/love_running_footer.png)
 
-- __The Contact Page (Need to update)__
-
-  - This page will allow the user to ask for help by submitting a form, name, e-mail, some message text, and some questions for mentorship meeting or just questions. The user will be asked to submit their full name and email address. 
-
-(Need to update)![Sign Up](https://github.com/lucyrush/readme-template/blob/master/media/love_running_signup.png)
-
-
-### Features Left to Implement (Need to update)
+### Features that can be Implement
 
 - Extend levels
 - Extend difficulties
 - Personal score system
-- time limits / levels / difficlties
-- Time frame - before same user can play again (like a break, go for a walk, drink coffee etc.)
+- time limits/levels/difficulties
+- A time frame - before the same user can play again (like a break, go for a walk, drink coffee, etc.)
 
 
-## Testing (Need to update)
+## Testing
 
-I have used gitpod, github, and google devtools under my design and texting phases. Used git commands for saving and pushing the code from gitpod to github.
+I have used gitpod, GitHub, and google dev tools during my design and testing phases. Used git commands for saving and pushing the code from gitpod to GitHub.
 
-Under the testings I have only used google chrome as webbrowser.
+Under the tests, I have only used google chrome as a web browser!
 
-Problems or issues under the design and testing have been a lot. because I am just in my begining to become a full stack coder. Basic typing errors, used wrong tags, elements, attributes etc. I have used code Institute as a baseline for information, slack community, w3school and YouTube for guidence. And also used my mentor for the code institute for support and guidence.
+I have had a lot of problems/issues during the design and testing phase regarding the interaction between HTML, CSS, and JS. One big thing has been to read and viewing of the code, like Swedish/English language, reading/viewing text (code) on the screen. The basic problem has been typing errors and using the wrong tags, elements, attributes, functions, declarations, etc. I have used code Institute as a baseline for information, the slack community, w3school, and YouTube for guidance. And also used my mentor for the code institute for support and guidance.
 
-### Validator Testing (Need to update) 
+### Validator Testing 
 
 - HTML
-  - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcode-institute-org.github.io%2Flove-running-2.0%2Findex.html)
+  - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2F777osek.github.io%2Fmind-game%2Findex.html&showsource=yes)
 - CSS
-  - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fvalidator.w3.org%2Fnu%2F%3Fdoc%3Dhttps%253A%252F%252Fcode-institute-org.github.io%252Flove-running-2.0%252Findex.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en#css)
+  - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2F777osek.github.io%2Fmind-game%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=sv)
+- JS
+  - No errors were found when passing through the official JSHint JavaScript Validator:
+Metrics - There are 15 functions in this file. The function with the largest signature takes 2 arguments, while the median is 0.
+The largest function has 14 statements in it, while the median is 2. The most complex function has a cyclomatic complexity value of 5 while the median is 1.
 
-### Unfixed Bugs (Need to update)
+### Unfixed Bugs
 
-(Need to update) You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a big variable to consider, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed. 
+According to my knowledge, there are no unfixed bugs, and why they were not fixed.
 
-## Deployment (Need to update)
+## Deployment
 
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub) 
+The project started with the code institute template and their README.md template to create this mind-game project on GitHub. All project work has been done via gitpod beside the README.md file has been updated via GitHub.
 
-- The site was deployed to GitHub pages. The steps to deploy are as follows: 
-  - In the GitHub repository, navigate to the Settings tab 
-  - From the source section drop-down menu, select the Master Branch
-  - Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment. 
-
-The live link can be found here - https://code-institute-org.github.io/love-running-2.0/index.html 
+The live link can be found here - [mind-game](https://777osek.github.io/mind-game/)
 
 
-## Credits (Need to update) 
+## Credits 
 
-In this section you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism. 
+The credits go to Östen Ekvall for his ideas, the content of the texts and pictures (images), and the code institute for their basic templates for my web design. The button was coded from this site https://buttonoptimizer.com/. Of cause the W3school for their site and helping guides etc. https://www.w3schools.com/.
 
-You can break the credits section up into Content and Media, depending on what you have included in your project. 
+Also these people from their YouTube clips:
+- https://www.youtube.com/watch?v=-tlb4tv4mC4
+- https://www.youtube.com/watch?v=ZniVgo8U7ek&t=258s
+- https://www.youtube.com/watch?v=Gi3INcPOvo8&t=601s
+- https://www.youtube.com/watch?v=vQAvjof1oe4&t=184s
 
-### Content 
 
-- The text for the Home page was taken from Wikipedia Article A
-- Instructions on how to implement form validation on the Sign Up page was taken from [Specific YouTube Tutorial](https://www.youtube.com/)
-- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
+### Content
+
+- All content text is coming from Östen Ekvall and his affirmation images for becoming a more happy and grateful person every day
+- Icons were taken from [Font Awesome](https://fontawesome.com/) but also standard emojs from https://emojipedia.org/wrapped-gift/
 
 ### Media
 
-- The photos used on the home and sign up page are from This Open Source site
-- The images used for the gallery page were taken from this other open source site
+- The images comes from Östen Ekvall
 
 
-Congratulations this is my second Readme, and I hope you will have a happy and greatful life as developer or as amazing person!
+Congratulations this is the second README file, I hope you will have a happy and grateful life as a developer and as an amazing person!
